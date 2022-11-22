@@ -1,4 +1,4 @@
-import { Map, RNG } from "rot-js";
+import { Map, RNG, } from "rot-js";
 import type { CreateCallback } from "rot-js/lib/map/map";
 import Tile from "rot-js/lib/display/tile";
 
@@ -39,12 +39,7 @@ export class Grid {
 
     const rooms = map.getRooms();
 
-    console.log("rooms found: ", rooms.length);
-    
-
     rooms.forEach(room => room.getDoors((x, y) => {
-      console.log('room found! at ', x, y);
-      
       this.drawDoorCb?.(x, y);
     }));
   }
